@@ -1,15 +1,13 @@
-function = eccentricityVolumeThickness()
+function [] = eccentricityVolumeThickness()
 
 if ~isdeployed
     disp('loading path')
 
     %for IU HPC
     addpath(genpath('/N/u/brlife/git/jsonlab'))
-    addpath(genpath(pwd))
     
     %for old VM
     addpath(genpath('/usr/local/jsonlab'))
-    addpath(genpath(pwd))
 end
 
 % Set top directory
@@ -70,7 +68,7 @@ rh.thick.periph = rh.thickness.cdata(rh.periphIndx);
 rh.thick.periph = rh.thick.periph(rh.thick.periph > 0);
 
 %% generate figures
-h.tpfig = figure('name', 'Foveal vs Peripheral','color', 'w', 'visible', 'on');
+h.tpfig = figure('name', 'Foveal vs Peripheral','color', 'w', 'visible', 'off');
 hold on;
 set(h.tpfig,'units','pixels','position',[1000,1000,1000,1000]); hold on;
 
@@ -141,4 +139,5 @@ saveas(h.tpfig, 'foveal_v_periph', 'png');
 save('output.mat','lh','rh','fovealbins','fovealbinnames','-v7.3');
 
 clear
+exit;
 end
