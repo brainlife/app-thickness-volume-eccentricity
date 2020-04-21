@@ -10,4 +10,4 @@ if [ ! -f rh.volume.surf.gii ]; then
 fi
 
 # bin by eccentricity
-time singularity exec -e docker://brainlife/mcr:neurodebian1604-r2017a ./compiled/eccentricityVolumeThickness
+time singularity exec -e docker://brainlife/mcr:r2019a ./compiled/eccentricityVolumeThickness

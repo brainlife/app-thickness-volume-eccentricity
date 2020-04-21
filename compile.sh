@@ -1,5 +1,5 @@
 #!/bin/bash
-module load matlab/2017a
+module load matlab/2019a
 
 mkdir compiled
 
