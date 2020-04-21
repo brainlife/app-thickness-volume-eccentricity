@@ -4,8 +4,10 @@
 #PBS -V
 
 # generate thickness and volume files
-echo $FREESURFER_LICENSE > license.txt
-time singularity exec -e -B `pwd`/license.txt:/usr/local/freesurfer/license.txt docker://brainlife/freesurfer:6.0.0 ./convert.sh
+if [ ! -f rh.volume.surf.gii ]; then
+	echo $FREESURFER_LICENSE > license.txt
+	time singularity exec -e -B `pwd`/license.txt:/usr/local/freesurfer/license.txt docker://brainlife/freesurfer:6.0.0 ./convert.sh
+fi
 
 # bin by eccentricity
 time singularity exec -e docker://brainlife/mcr:neurodebian1604-r2017a ./compiled/eccentricityVolumeThickness

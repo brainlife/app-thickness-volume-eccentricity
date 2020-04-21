@@ -8,6 +8,8 @@ if ~isdeployed
     addpath(genpath(pwd)) 
 end
 
+addpath(genpath(pwd))
+
 % Set top directory
 topdir = pwd;
 
