@@ -5,9 +5,7 @@ if ~isdeployed
 
     %for IU HPC
     addpath(genpath('/N/u/brlife/git/jsonlab'))
-    
-    %for old VM
-    addpath(genpath('/usr/local/jsonlab'))
+    addpath(genpath(pwd)) 
 end
 
 % Set top directory
