@@ -5,7 +5,7 @@ mkdir compiled
 
 cat > build.m <<END
 addpath(genpath('/N/u/brlife/git/jsonlab'))
-addpath(genpath('/N/soft/mason/SPM/spm8'))
+addpath(genpath('/N/u/brlife/git/spm12'))
 mcc -m -R -nodisplay -d compiled eccentricityVolumeThickness
 exit
 END

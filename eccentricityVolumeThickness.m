@@ -5,7 +5,7 @@ if ~isdeployed
 
     %for IU HPC
     addpath(genpath('/N/u/brlife/git/jsonlab'))
-    addpath(genpath('/N/soft/mason/SPM/spm8')) 
+    addpath(genpath('/N/u/brlife/git/spm12')) 
 end
 
 % Set top directory
