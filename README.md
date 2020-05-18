@@ -44,8 +44,8 @@ You can submit this App online at [10.25663/brainlife.app.243](10.25663/brainlif
 
 ```json 
 {
-   'freesurfer':    'testdata/freesurfer/output',
-    'prf':    'testdata/prf/
+   "freesurfer":    "testdata/freesurfer/output',
+   "prf":    "testdata/prf/"
 } 
 ``` 
 
