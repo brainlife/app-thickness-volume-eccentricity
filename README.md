@@ -26,8 +26,9 @@ Specifically, this app will bin cortical vertices by multiple pRF eccentricities
 
 ### Citations 
 
-Please cite the following articles when publishing papers that used data, code or other resources created by the brainlife.io community. 
+Please refer to the following page for references to cite  when publishing papers that used data, code or other resources created by the brainlife.io community. 
 
+https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferMethodsCitation
  
 
 ## Running the App 
