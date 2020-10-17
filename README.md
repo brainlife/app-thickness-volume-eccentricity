@@ -78,6 +78,6 @@ The secondary output of this app is `product.json`. This file allows web interfa
 
 This App requires the following libraries when run locally. 
 
-- Matlab: 
-- Freesurfer: 
-- Singularity: 
+- Matlab: https://www.mathworks.com/help/install/install-products.html
+- Freesurfer: https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall
+- Singularity: https://singularity.lbl.gov/quickstart
