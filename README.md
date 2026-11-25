@@ -10,7 +10,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT license"></a>
 </p>
 
-## 🧠 At a glance
+## At a glance
 
 <!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
 
@@ -20,21 +20,21 @@ Converts the FreeSurfer pial surface, thickness, volume and the pRF eccentricity
 
 | | |
 |---|---|
-| 📥 **Inputs** | `neuro/freesurfer` · `neuro/prf` |
-| 📤 **Outputs** | `raw` |
-| 🐳 **Container** | `brainlife/freesurfer:6.0.0` |
-| ⚙️ **Resources** | 1 CPUs · 0.5 h walltime |
-| 🔑 **Requires** | `FREESURFER_LICENSE` |
-| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.243](https://doi.org/10.25663/brainlife.app.243) |
+| **Inputs** | `neuro/freesurfer` · `neuro/prf` |
+| **Outputs** | `raw` |
+| **Container** | `brainlife/freesurfer:6.0.0` |
+| **Resources** | 1 CPUs · 0.5 h walltime |
+| **Requires** | `FREESURFER_LICENSE` |
+| **Run it** | [doi.org/10.25663/brainlife.app.243](https://doi.org/10.25663/brainlife.app.243) |
 
-#### 📥 Inputs
+#### Inputs
 
 | Input | Datatype | Required | Description |
 |---|---|---|---|
 | `freesurfer` | `neuro/freesurfer` | yes | The path to the top directory containing the output from Freesurfer |
 | `prf` | `neuro/prf` | yes | The path to the directory containing the surface-mapped prf files from the prf datatype |
 
-#### 📤 Outputs
+#### Outputs
 
 | Output | Datatype | Description |
 |---|---|---|
@@ -42,19 +42,19 @@ Converts the FreeSurfer pial surface, thickness, volume and the pRF eccentricity
 
 <!-- brainlife-app:end -->
 
-## 🚀 Running the App
+## Running the App
 
-### ☁️ On brainlife.io
+### On brainlife.io
 
 Open the App at [doi.org/10.25663/brainlife.app.243](https://doi.org/10.25663/brainlife.app.243), choose a FreeSurfer output (`neuro/freesurfer`) and a pRF dataset (`neuro/prf`) mapped onto the same subject's FreeSurfer surfaces, and press **Execute**. The App writes a `raw` dataset tagged `volThickEcc` to your project. Use it to relate visual-cortex morphometry to retinotopic eccentricity.
 
-### 🔬 How it works
+### How it works
 
 1. The pial surface, cortical thickness, cortical volume and the pRF eccentricity map (`lh/rh.eccentricity` in the pRF dataset) of each hemisphere are converted to GIFTI with FreeSurfer `mris_convert`.
 2. Cortical vertices are binned by pRF eccentricity: 0–1, 0–2, 0–3, 0–4 and 0–5 degrees (foveal bins, cumulative), and beyond 5 degrees (periphery).
 3. For each bin and hemisphere, the App keeps the vertices with non-zero values and reports the maximum, mean and standard deviation of thickness and volume (compiled MATLAB).
 
-### 💻 Locally
+### Locally
 
 You need [Singularity/Apptainer](https://apptainer.org/), [`jq`](https://jqlang.github.io/jq/) and a [FreeSurfer license](https://surfer.nmr.mgh.harvard.edu/registration.html). The App uses the `brainlife/freesurfer:6.0.0` and `brainlife/mcr:r2019a` containers.
 
@@ -75,7 +75,7 @@ You need [Singularity/Apptainer](https://apptainer.org/), [`jq`](https://jqlang.
    ./main
    ```
 
-## 📦 Outputs
+## Outputs
 
 ```text
 output.mat            per-hemisphere structures with the vertices, max, mean and SD of thickness and volume in each bin
@@ -84,7 +84,7 @@ product.json          bin means, shown on brainlife.io
 lh/rh.*.surf.gii      intermediate GIFTI surfaces and maps
 ```
 
-## 📚 Citing
+## Citing
 
 > [!TIP]
 > If you use this App in your work, please cite the App, the software it builds on and brainlife.io (below). GitHub's **Cite this repository** button gives the App citation in APA and BibTeX.
@@ -95,14 +95,14 @@ lh/rh.*.surf.gii      intermediate GIFTI surfaces and maps
 - Hayashi S, Caron BA, Heinsfeld AS, et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. *Nature Methods* 21:809–813 (2024). [doi:10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 - Avesani P, McPherson B, Hayashi S, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. *Scientific Data* 6:69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
 
-## 👥 Authors
+## Authors
 
 - Brad Caron
 - Jasleen Jolly
 
 **Contributors:** Soichi Hayashi
 
-## 💰 Funding
+## Funding
 
 [![Wellcome-226486/Z/22/Z](https://img.shields.io/badge/Wellcome-226486%2FZ%2F22%2FZ-purple.svg)](https://wellcome.org/)
 [![NIH-NINDS-U24NS140384](https://img.shields.io/badge/NIH_NINDS-U24NS140384-green.svg)](https://reporter.nih.gov/project-details/11261037)
@@ -121,6 +121,6 @@ lh/rh.*.surf.gii      intermediate GIFTI surfaces and maps
 
 <sub>brainlife.io is publicly funded, and acknowledging that support helps keep it running. This App was developed with support from Wellcome, the U.S. National Institutes of Health (including the BRAIN Initiative BRAIN CONNECTS program: The Axonal Projectome EXchange, U24NS140384, and the Center for Mesoscale Connectomics, UM1NS132207) and the U.S. National Science Foundation.</sub>
 
-## ⚖️ License
+## License
 
 MIT (see the [`LICENSE`](https://github.com/brainlife/app-thickness-volume-eccentricity/blob/v1.0.0/LICENSE) file on the `v1.0.0` branch). FreeSurfer is distributed under its own [license](https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferSoftwareLicense).
